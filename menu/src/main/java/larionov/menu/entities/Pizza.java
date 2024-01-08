@@ -1,4 +1,4 @@
-package larionov.menu;
+package larionov.menu.entities;
 
 import lombok.Setter;
 

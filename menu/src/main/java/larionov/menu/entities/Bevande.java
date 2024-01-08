@@ -1,4 +1,4 @@
-package larionov.menu;
+package larionov.menu.entities;
 
 public class Bevande {
     private String nomeBevanda;

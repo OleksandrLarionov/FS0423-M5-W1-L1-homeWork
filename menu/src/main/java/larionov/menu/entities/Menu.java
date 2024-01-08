@@ -1,4 +1,4 @@
-package larionov.menu;
+package larionov.menu.entities;
 
 import java.util.ArrayList;
 import java.util.List;
