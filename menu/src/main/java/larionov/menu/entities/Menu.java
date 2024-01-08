@@ -30,9 +30,11 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "Menu{" +
-                "Pizze=" + pizzeMenu +
-                ", Bevande=" + bevandeMenu +
+        return ":::::::::::::::::::::::................Menu................:::::::::::::::::::::::\n"
+                + "......:::::::Le Nostre Pizze:::::::......\n" +
+                pizzeMenu +
+                "\n......:::::::Le Nostre Bevande:::::::......\n"
+                + bevandeMenu +
                 '}';
     }
 }

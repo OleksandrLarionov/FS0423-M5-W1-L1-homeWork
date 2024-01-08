@@ -27,9 +27,6 @@ public class Bevande {
 
     @Override
     public String toString() {
-        return "Bevande{" +
-                "nomeBevanda='" + nomeBevanda + '\'' +
-                ", prezzoBevanda=" + prezzoBevanda +
-                '}';
+        return nomeBevanda  + ":"  + " " + prezzoBevanda + " Euro";
     }
 }
