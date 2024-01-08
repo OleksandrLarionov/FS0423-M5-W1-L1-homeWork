@@ -9,22 +9,29 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class BeansConfiguration {
+    //    *********************************PIZZE*********************************
     @Bean
     Pizza napoli() {
         return new Pizza("Napoli", 12.50);
     }
+
     @Bean
-    Pizza margherita(){
+    Pizza margherita() {
         return new Pizza("Margherita", 8);
     }
+    @Bean
+    Pizza focacciaRossa(){
+        return new Pizza("Focaccia", 20);
+    }
 
+    //    ******************BEVANDE***************************
     @Bean
     Bevande cocacola() {
         return new Bevande("CocaCola", 5);
     }
 
     @Bean
-    Bevande fanta(){
+    Bevande fanta() {
         return new Bevande("Fanta", 6);
     }
 
