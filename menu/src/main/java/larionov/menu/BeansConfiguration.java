@@ -5,25 +5,37 @@ import larionov.menu.entities.Menu;
 import larionov.menu.entities.Pizza;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class BeansConfiguration {
     @Bean
-    Pizza getPizza() {
+    Pizza napoli() {
         return new Pizza("Napoli", 12.50);
+    }
+    @Bean
+    Pizza margherita(){
+        return new Pizza("Margherita", 8);
     }
 
     @Bean
-    Bevande getBevanda() {
+    Bevande cocacola() {
         return new Bevande("CocaCola", 5);
     }
 
     @Bean
-    Menu getMenu(Pizza p, Bevande b) {
-        Menu newMenu = new Menu();
-        newMenu.aggiungiPizzaAlMenu(p);
-        newMenu.aggiungiBevandaAlMenu(b);
-        return newMenu;
+    Bevande fanta(){
+        return new Bevande("Fanta", 6);
+    }
+
+    @Bean
+    Menu getMenu() {
+        Menu menu = new Menu();
+        menu.aggiungiPizzaAlMenu(margherita());
+        menu.aggiungiPizzaAlMenu(napoli());
+        menu.aggiungiBevandaAlMenu(fanta());
+        menu.aggiungiBevandaAlMenu(cocacola());
+        return menu;
     }
 
 

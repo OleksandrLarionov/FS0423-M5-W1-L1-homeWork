@@ -12,12 +12,15 @@ public class Pizza {
     private String basePizza;
     @Setter
     private double prezzoPizza;
+    @Setter
+    private String infoNutrizionali;
     private List<String> condimenti;
 
     public Pizza(String nomePizza, double prezzoPizza) {
         this.nomePizza = nomePizza;
         this.basePizza = "Mozzarella e Pommidoro";
         this.prezzoPizza = prezzoPizza;
+        this.infoNutrizionali = "";
         this.condimenti = new ArrayList<>();
     }
 
@@ -40,10 +43,14 @@ public class Pizza {
     public void aggiungiCondimenti(String condimento) {
         this.condimenti.add(condimento);
     }
+    public void infoNutrizionali (){
+        System.out.println("Questi sono i valori nutrizionali :" + this.infoNutrizionali);
+    }
 
     @Override
     public String toString() {
         return
-                nomePizza + ":" + " " + basePizza + " ------ " + prezzoPizza + " Euro";
+                "\n" + nomePizza + ":" + " " + basePizza + " ------ " + prezzoPizza + " Euro\n";
     }
+
 }

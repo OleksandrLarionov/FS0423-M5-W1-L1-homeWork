@@ -14,7 +14,7 @@ public class MenuApplication {
 
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MenuApplication.class);
 
-		System.out.println(ctx.getBean("getPizza"));
+		System.out.println(ctx.getBean("napoli"));
 		System.out.println(ctx.getBean("getMenu"));
 
 

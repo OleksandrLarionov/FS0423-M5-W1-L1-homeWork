@@ -27,6 +27,6 @@ public class Bevande {
 
     @Override
     public String toString() {
-        return nomeBevanda  + ":"  + " " + prezzoBevanda + " Euro";
+        return "\n" + nomeBevanda  + ":"  + " " + prezzoBevanda + " Euro\n";
     }
 }
