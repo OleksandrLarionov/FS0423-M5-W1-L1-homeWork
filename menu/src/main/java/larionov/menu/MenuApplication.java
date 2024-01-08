@@ -9,16 +9,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootApplication
 public class MenuApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MenuApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(MenuApplication.class, args);
 
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MenuApplication.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MenuApplication.class);
 
-//		System.out.println(ctx.getBean("napoli"));
+        Menu menu = (Menu) ctx.getBean("getMenu");
+        Pizza napoli = (Pizza) ctx.getBean("napoli");
+        System.out.println(napoli.calcoloTotaleCalorie());
+        System.out.println(menu);
 
-		System.out.println(ctx.getBean("getMenu"));
-
-
-
-	}
+        ctx.close();
+    }
 }

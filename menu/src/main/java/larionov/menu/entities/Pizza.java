@@ -1,56 +1,39 @@
 package larionov.menu.entities;
 
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pizza {
-    @Setter
-    private String nomePizza;
-    @Setter
-    private String basePizza;
-    @Setter
-    private double prezzoPizza;
-    @Setter
-    private String infoNutrizionali;
-    private List<String> condimenti;
+@Setter
+@Getter
+@NoArgsConstructor
+public class Pizza extends MenuItem {
+    private String base;
+    private List<Condimenti> condimenti;
 
-    public Pizza(String nomePizza, double prezzoPizza) {
-        this.nomePizza = nomePizza;
-        this.basePizza = "Mozzarella e Pommidoro";
-        this.prezzoPizza = prezzoPizza;
-        this.infoNutrizionali = "";
+    public Pizza(String nome, double prezzo, int calorie) {
+        super(nome, prezzo, calorie);
+        this.base = "Pomodoro e Mozzarella";
         this.condimenti = new ArrayList<>();
     }
 
-    public String getNomePizza() {
-        return nomePizza;
-    }
-
-    public String getBasePizza() {
-        return basePizza;
-    }
-
-    public double getPrezzoPizza() {
-        return prezzoPizza;
-    }
-
-    public List<String> getCondimenti() {
-        return condimenti;
-    }
-
-    public void aggiungiCondimenti(String condimento) {
+    public void aggiungiCondimentiAllaPizza(Condimenti condimento) {
         this.condimenti.add(condimento);
     }
-    public void infoNutrizionali (){
-        System.out.println("Questi sono i valori nutrizionali :" + this.infoNutrizionali);
+    
+    public double calcoloTotaleCalorie(){
+        return getCalorie() + condimenti.stream().mapToDouble(Condimenti::getCalorie).sum();
     }
 
     @Override
     public String toString() {
-        return
-                "\n" + nomePizza + ":" + " " + basePizza + " ------ " + prezzoPizza + " Euro\n";
-    }
+        return "\n"  + getNome() + " " +
+                "base='" + base + '\'' +
+                (!condimenti.isEmpty() ? ", condimenti=" + condimenti : "") + "\n";
 
+    }
 }
